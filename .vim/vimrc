@@ -7,6 +7,14 @@ else
 endif
 
 " {{{ VIM PLUG
+
+let vimPlugFile = vimFolder.'/autoload/plug.vim'
+
+call plug#begin(vimFolder.'/plugged')
+  " vim-plug help tags
+  Plug 'junegunn/vim-plug'
+call plug#end()
+
 " }}}
 
 " {{{ PLUGINS SETTINGS
