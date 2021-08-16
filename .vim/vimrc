@@ -31,12 +31,27 @@ call plug#end()
 " When in doubt call :help.
 " Vim doesn't like keyboard layouts other than US-International, e.g. jumping
 " through help tags is mapped with [c-ç] on a ABNT layout.
+
+filetype plugin indent on
 set modeline
 
 set expandtab
 set tabstop=2
 set shiftwidth=2
 set shiftround
+let mapleader=','
+set colorcolumn=81 textwidth=80
+set showcmd
+set ruler
+set number
+set relativenumber
+set cursorline
+set incsearch
+set showmatch
+set backspace=indent,eol,start,
+set path+=**
+set wildmenu
+
 if has('vms')
   set nobackup " VMs have their own backup settings.
 else
