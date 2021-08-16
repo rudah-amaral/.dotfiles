@@ -36,6 +36,7 @@ call plug#begin(vimFolder.'/plugged')
 
   Plug 'lervag/vimtex'
 
+  Plug 'mateusbraga/vim-spell-pt-br'
 call plug#end()
 
 " }}}
