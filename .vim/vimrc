@@ -77,6 +77,11 @@ else
   endif
 endif
 
+" You can't highlight something with only two terminal colors.
+if &t_Co > 2 || has('gui_running')
+  set hlsearch
+endif
+
 if has('gui_running')
   set guifont=DejaVu_Sans_Mono_for_Powerline:h14:cANSI:qDRAFT
 endif
