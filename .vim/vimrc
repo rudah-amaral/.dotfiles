@@ -5,3 +5,32 @@ elseif has('nvim')
 else
   let vimFolder = expand('~/vimfiles')
 endif
+
+" {{{ VIM PLUG
+" }}}
+
+" {{{ PLUGINS SETTINGS
+" }}}
+
+" {{{ VIM OPTIONS
+
+" When in doubt call :help.
+" Vim doesn't like keyboard layouts other than US-International, e.g. jumping
+" through help tags is mapped with [c-ç] on a ABNT layout.
+set modeline
+
+" }}}
+
+" {{{ VIM VARIABLES
+" }}}
+
+" {{{ MY FUNCTIONS
+" }}}
+
+" {{{ AUTOCMDS
+" }}}
+
+" MAPPINGS {{{
+" }}}
+
+" vim: foldmethod=marker: foldlevel=0
