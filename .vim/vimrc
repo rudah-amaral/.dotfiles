@@ -70,6 +70,7 @@ nnoremap <left> <nop>
 nnoremap <right> <nop>
 inoremap <c-c> <esc>
 
+nnoremap <leader><space> :nohls<CR>
 if has('clipboard')
   vnoremap <c-c> "+y<esc>
   vnoremap <c-v> v"+p<esc>
