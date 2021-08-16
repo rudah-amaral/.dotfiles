@@ -43,6 +43,14 @@ else
     let &undodir = vimFolder.'/undodir'
   endif
 endif
+
+if has('folding')
+  set foldenable
+  set foldmethod=indent
+  set foldlevelstart=10
+  set foldnestmax=10
+endif
+
 " }}}
 
 " {{{ VIM VARIABLES
