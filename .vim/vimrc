@@ -25,6 +25,9 @@ call plug#begin(vimFolder.'/plugged')
   Plug 'arcticicestudio/nord-vim'
   Plug 'dracula/vim', {'as': 'dracula'}
 
+  " Requires compiling. Latest info on GitHub repository.
+  Plug 'ycm-core/YouCompleteMe'
+
   Plug 'tpope/vim-fugitive'
 call plug#end()
 
@@ -41,6 +44,12 @@ call plug#end()
 " colorscheme nord
 
 colorscheme dracula
+
+" ycm-core/YouCompleteMe
+set encoding=utf-8
+let g:ycm_filetype_blacklist = {'tex': 1}
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 " }}}
 
 " {{{ VIM OPTIONS
