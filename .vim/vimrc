@@ -25,6 +25,7 @@ call plug#begin(vimFolder.'/plugged')
   Plug 'arcticicestudio/nord-vim'
   Plug 'dracula/vim', {'as': 'dracula'}
 
+  Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " }}}
@@ -120,9 +121,18 @@ let g:netrw_liststyle = 3
 " }}}
 
 " {{{ MY FUNCTIONS
+
 " }}}
 
 " {{{ AUTOCMDS
+
+if has('autocmd')
+  augroup vimrc
+    autocmd!
+    autocmd BufReadPost fugitive://* set bufhidden=delete
+  augroup END
+endif
+
 " }}}
 
 " MAPPINGS {{{
