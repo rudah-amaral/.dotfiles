@@ -68,6 +68,7 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
+inoremap <c-c> <esc>
 
 if has('clipboard')
   vnoremap <c-c> "+y<esc>
