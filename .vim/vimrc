@@ -28,6 +28,9 @@ call plug#begin(vimFolder.'/plugged')
   " Requires compiling. Latest info on GitHub repository.
   Plug 'ycm-core/YouCompleteMe'
 
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+
   Plug 'tpope/vim-fugitive'
 call plug#end()
 
@@ -50,6 +53,12 @@ set encoding=utf-8
 let g:ycm_filetype_blacklist = {'tex': 1}
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+" let g:airline_theme = 'solarized'
+" let g:airline_theme = 'nord'
+let g:airline_theme = 'dracula'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 " }}}
 
 " {{{ VIM OPTIONS
