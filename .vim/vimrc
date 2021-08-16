@@ -19,11 +19,27 @@ endif
 call plug#begin(vimFolder.'/plugged')
   " vim-plug help tags
   Plug 'junegunn/vim-plug'
+
+  " Themes, remember to set terminal colors all well
+  Plug 'altercation/vim-colors-solarized'
+  Plug 'arcticicestudio/nord-vim'
+  Plug 'dracula/vim', {'as': 'dracula'}
+
 call plug#end()
 
 " }}}
 
 " {{{ PLUGINS SETTINGS
+
+" altercation/vim-colors-solarized
+" syntax enable
+" set background=dark
+" colorscheme solarized
+" call togglebg#map('<F5>')
+
+" colorscheme nord
+
+colorscheme dracula
 " }}}
 
 " {{{ VIM OPTIONS
