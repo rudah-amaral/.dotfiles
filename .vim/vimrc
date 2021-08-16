@@ -32,6 +32,8 @@ call plug#begin(vimFolder.'/plugged')
   Plug 'vim-airline/vim-airline-themes'
 
   Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-unimpaired'
+
 call plug#end()
 
 " }}}
