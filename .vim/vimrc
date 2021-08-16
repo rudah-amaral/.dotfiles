@@ -19,6 +19,30 @@ endif
 " through help tags is mapped with [c-ç] on a ABNT layout.
 set modeline
 
+if has('vms')
+  set nobackup " VMs have their own backup settings.
+else
+  if !isdirectory(vimFolder.'/backupdir')
+    call mkdir(vimFolder.'/backupdir')
+  endif
+
+  if !isdirectory(vimFolder.'/swpdir')
+    call mkdir(vimFolder.'/swpdir')
+  endif
+
+  set backup
+  let &backupdir = vimFolder.'/backupdir'
+  let &directory = vimFolder.'/swpdir'
+
+  if has('persistent_undo')
+    if !isdirectory(vimFolder.'/undodir')
+      call mkdir(vimFolder.'/undodir')
+    endif
+
+    set undofile
+    let &undodir = vimFolder.'/undodir'
+  endif
+endif
 " }}}
 
 " {{{ VIM VARIABLES
