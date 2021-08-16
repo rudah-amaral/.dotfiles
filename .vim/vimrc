@@ -71,6 +71,9 @@ nnoremap <right> <nop>
 inoremap <c-c> <esc>
 
 nnoremap <leader><space> :nohls<CR>
+nnoremap <leader>ev :sp $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC <bar> :doautocmd BufRead<CR>
+
 if has('clipboard')
   vnoremap <c-c> "+y<esc>
   vnoremap <c-v> v"+p<esc>
