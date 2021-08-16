@@ -77,6 +77,10 @@ else
   endif
 endif
 
+if has('gui_running')
+  set guifont=DejaVu_Sans_Mono_for_Powerline:h14:cANSI:qDRAFT
+endif
+
 if has('folding')
   set foldenable
   set foldmethod=indent
