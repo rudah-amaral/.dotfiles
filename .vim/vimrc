@@ -1,0 +1,7 @@
+if has('unix')
+  let vimFolder = expand('~/.vim')
+elseif has('nvim')
+  let vimFolder = stdpath('data').'/plugged'
+else
+  let vimFolder = expand('~/vimfiles')
+endif
