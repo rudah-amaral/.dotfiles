@@ -37,6 +37,9 @@ call plug#begin(vimFolder.'/plugged')
   Plug 'lervag/vimtex'
 
   Plug 'mateusbraga/vim-spell-pt-br'
+
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
 call plug#end()
 
 " }}}
@@ -77,6 +80,7 @@ let g:vimtex_fold_enabled = 1
 " let g:vimtex_imaps_enabled = 0
 " let g:vimtex_imaps_leader = ';'
 
+let g:UltiSnipsExpandTrigger="<c-j>"
 " }}}
 
 " {{{ VIM OPTIONS
