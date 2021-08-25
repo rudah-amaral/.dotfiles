@@ -81,7 +81,6 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-export GIT_DIR=$HOME/dotfiles vim
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -101,7 +100,9 @@ export GIT_DIR=$HOME/dotfiles vim
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
+
 alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
+alias dotfilesDiff="cd ~ && GIT_DIR=$HOME/dotfiles vim -c G"
 dotfiles config --local status.showUntrackedFiles no
 dotfiles config --local core.worktree $HOME
+dotfiles config --unset core.bare
