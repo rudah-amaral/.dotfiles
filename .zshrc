@@ -102,9 +102,13 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
-alias dotfilesDiff="cd ~ && GIT_DIR=$HOME/dotfiles vim -c G"
-dotfiles config --local status.showUntrackedFiles no
-dotfiles config --local core.worktree $HOME
-dotfiles config --unset core.bare
+alias dotfilesDiff="GIT_DIR=$HOME/dotfiles nvim ~ -c G -c only"
+
+# Those should be set only once
+# dotfiles config --local status.showUntrackedFiles no
+# dotfiles config --local core.worktree $HOME
+
+# This should be set when dotfiles repo is cloned with --bare flag
+# dotfiles config --unset core.bare
 
 export GPG_TTY=$(tty)
