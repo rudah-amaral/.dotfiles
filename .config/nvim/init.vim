@@ -108,6 +108,8 @@ set showmatch
 set backspace=indent,eol,start,
 set path+=**
 set wildmenu
+set termguicolors
+set clipboard+=unnamedplus
 
 if has('vms')
   set nobackup " VMs have their own backup settings.
