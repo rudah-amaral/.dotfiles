@@ -106,3 +106,5 @@ alias dotfilesDiff="cd ~ && GIT_DIR=$HOME/dotfiles vim -c G"
 dotfiles config --local status.showUntrackedFiles no
 dotfiles config --local core.worktree $HOME
 dotfiles config --unset core.bare
+
+export GPG_TTY=$(tty)
