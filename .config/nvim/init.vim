@@ -40,6 +40,8 @@ call plug#begin(vimFolder.'/plugged')
 
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
+
+  Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
