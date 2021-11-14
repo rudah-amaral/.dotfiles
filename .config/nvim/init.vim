@@ -1,7 +1,7 @@
-if has('unix')
+if has('nvim')
+  let vimFolder = stdpath('config')
+elseif has('unix')
   let vimFolder = expand('~/.vim')
-elseif has('nvim')
-  let vimFolder = stdpath('data').'/plugged'
 else
   let vimFolder = expand('~/vimfiles')
 endif
@@ -11,8 +11,8 @@ endif
 let vimPlugFile = vimFolder.'/autoload/plug.vim'
 
 if empty(glob(vimPlugFile))
-  silent execute '!curl -fLo '.vimPlugFile --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  silent execute '!curl -fLo '.vimPlugFile.' --create-dirs'
+        \ ' https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -47,14 +47,14 @@ call plug#end()
 " {{{ PLUGINS SETTINGS
 
 " altercation/vim-colors-solarized
-" syntax enable
-" set background=dark
+syntax enable
+set background=dark
 " colorscheme solarized
 " call togglebg#map('<F5>')
 
-" colorscheme nord
+colorscheme nord
 
-colorscheme dracula
+" colorscheme dracula
 
 " ycm-core/YouCompleteMe
 set encoding=utf-8
@@ -63,8 +63,8 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 
 " let g:airline_theme = 'solarized'
-" let g:airline_theme = 'nord'
-let g:airline_theme = 'dracula'
+let g:airline_theme = 'nord'
+" let g:airline_theme = 'dracula'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
