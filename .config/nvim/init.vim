@@ -40,6 +40,7 @@ call plug#begin(vimFolder.'/plugged')
 
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 " }}}
@@ -81,6 +82,14 @@ let g:vimtex_view_general_options
 let g:vimtex_matchparen_enabled = 0
 
 let g:UltiSnipsExpandTrigger="<c-j>"
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true
+  },
+}
+EOF
 " }}}
 
 " {{{ VIM OPTIONS
