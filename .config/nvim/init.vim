@@ -78,6 +78,7 @@ let g:vimtex_view_general_options
   \ . ':call remote_foreground('''.v:servername.''')^<CR^>^<CR^>\""'
 " let g:vimtex_imaps_enabled = 0
 " let g:vimtex_imaps_leader = ';'
+let g:vimtex_matchparen_enabled = 0
 
 let g:UltiSnipsExpandTrigger="<c-j>"
 " }}}
