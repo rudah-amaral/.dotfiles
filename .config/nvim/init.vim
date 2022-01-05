@@ -117,7 +117,7 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set shiftround
-let mapleader=','
+let mapleader=' '
 set colorcolumn=81 textwidth=80
 set showcmd
 set ruler
@@ -210,7 +210,7 @@ nnoremap <leader><space> :nohls<CR>
 nnoremap <leader>ev :sp $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC <bar> :doautocmd BufRead<CR>
 
-nnoremap <space> za
+nnoremap <leader><space> za
 
 if has('clipboard')
   vnoremap <c-c> "+y<esc>
