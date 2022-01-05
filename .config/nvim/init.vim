@@ -39,6 +39,8 @@ call plug#begin(vimFolder.'/plugged')
   Plug 'tpope/vim-unimpaired'
   Plug 'tpope/vim-commentary'
 
+  Plug 'ThePrimeagen/vim-be-good'
+
   Plug 'lervag/vimtex'
 
   Plug 'mateusbraga/vim-spell-pt-br'
