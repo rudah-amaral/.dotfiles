@@ -22,7 +22,8 @@ call plug#begin(vimFolder.'/plugged')
 
   " Themes, remember to set terminal colors all well
   Plug 'altercation/vim-colors-solarized'
-  Plug 'arcticicestudio/nord-vim'
+  " Plug 'arcticicestudio/nord-vim'
+  Plug 'shaunsingh/nord.nvim'
   Plug 'dracula/vim', {'as': 'dracula'}
 
   " Requires compiling. Latest info on GitHub repository.
@@ -66,7 +67,7 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 
 " let g:airline_theme = 'solarized'
-let g:airline_theme = 'nord'
+let g:airline_theme = 'base16_nord'
 " let g:airline_theme = 'dracula'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
