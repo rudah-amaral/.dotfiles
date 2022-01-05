@@ -215,6 +215,7 @@ nnoremap <leader>ev :sp $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC <bar> :doautocmd BufRead<CR>
 
 nnoremap <leader><space> za
+nnoremap <leader>pv :wincmd v <bar> :Ex <bar> :vertical resize 30<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
