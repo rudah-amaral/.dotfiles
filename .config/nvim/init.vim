@@ -40,7 +40,8 @@ call plug#begin(vimFolder.'/plugged')
   Plug 'mateusbraga/vim-spell-pt-br'
 
   Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
+  " I'll be creating my own snippets
+  " Plug 'honza/vim-snippets'
 
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
