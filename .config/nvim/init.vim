@@ -29,7 +29,8 @@ call plug#begin(vimFolder.'/plugged')
   Plug 'ryanoasis/vim-devicons'
 
   " Requires compiling. Latest info on GitHub repository.
-  Plug 'ycm-core/YouCompleteMe'
+  " Plug 'ycm-core/YouCompleteMe'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
