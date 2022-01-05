@@ -34,6 +34,7 @@ call plug#begin(vimFolder.'/plugged')
 
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-unimpaired'
+  Plug 'tpope/vim-commentary'
 
   Plug 'lervag/vimtex'
 
