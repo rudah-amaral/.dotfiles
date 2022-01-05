@@ -132,6 +132,9 @@ set path+=**
 set wildmenu
 set termguicolors
 set clipboard+=unnamedplus
+set smartindent
+set scrolloff=8
+set signcolumn=yes
 
 if has('vms')
   set nobackup " VMs have their own backup settings.
