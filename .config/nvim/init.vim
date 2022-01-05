@@ -26,6 +26,8 @@ call plug#begin(vimFolder.'/plugged')
   Plug 'shaunsingh/nord.nvim'
   Plug 'dracula/vim', {'as': 'dracula'}
 
+  Plug 'ryanoasis/vim-devicons'
+
   " Requires compiling. Latest info on GitHub repository.
   Plug 'ycm-core/YouCompleteMe'
 
