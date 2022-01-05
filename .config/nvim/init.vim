@@ -113,10 +113,11 @@ EOF
 filetype plugin indent on
 set modeline
 
-set expandtab
-set tabstop=2
-set shiftwidth=2
-set shiftround
+set expandtab " Tabs are spaces
+set tabstop=2 " 2 spaces
+set softtabstop=2 " A <BS> is 2 spaces
+set shiftwidth=2 " >> and << is 2 spaces
+set shiftround " Identing is rounded to divisibles by 2
 let mapleader=' '
 set colorcolumn=81 textwidth=80
 set showcmd
