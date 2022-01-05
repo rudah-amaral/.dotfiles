@@ -68,10 +68,11 @@ colorscheme nord
 " colorscheme dracula
 
 " ycm-core/YouCompleteMe
-set encoding=utf-8
-let g:ycm_filetype_blacklist = {'tex': 1}
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
+" set encoding=utf-8
+" let g:ycm_filetype_blacklist = {'tex': 1}
+" let g:ycm_autoclose_preview_window_after_insertion = 1
+" let g:ycm_autoclose_preview_window_after_completion = 1
+lua require('coc')
 
 " let g:airline_theme = 'solarized'
 let g:airline_theme = 'base16_nord'
