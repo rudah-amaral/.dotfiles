@@ -67,10 +67,6 @@ colorscheme nord
 
 " colorscheme dracula
 
-" ycm-core/YouCompleteMe
-" let g:ycm_filetype_blacklist = {'tex': 1}
-" let g:ycm_autoclose_preview_window_after_insertion = 1
-" let g:ycm_autoclose_preview_window_after_completion = 1
 lua require('plugin-settings/CoC')
 
 " let g:airline_theme = 'solarized'
