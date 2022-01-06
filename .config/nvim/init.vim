@@ -21,7 +21,6 @@ call plug#begin(vimFolder.'/plugged')
   Plug 'junegunn/vim-plug'
 
   " Themes, remember to set terminal colors all well
-  Plug 'altercation/vim-colors-solarized'
   Plug 'shaunsingh/nord.nvim'
   Plug 'dracula/vim', {'as': 'dracula'}
 
@@ -45,8 +44,6 @@ call plug#begin(vimFolder.'/plugged')
   Plug 'mateusbraga/vim-spell-pt-br'
 
   Plug 'SirVer/ultisnips'
-  " I'll be creating my own snippets
-  " Plug 'honza/vim-snippets'
   Plug 'mattn/emmet-vim'
 
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
