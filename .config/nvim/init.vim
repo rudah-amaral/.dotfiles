@@ -57,14 +57,7 @@ call plug#end()
 
 " {{{ PLUGINS SETTINGS
 
-" altercation/vim-colors-solarized
-syntax enable
-set background=dark
-" colorscheme solarized
-" call togglebg#map('<F5>')
-
 colorscheme nord
-
 " colorscheme dracula
 
 lua require('plugin-settings/CoC')
