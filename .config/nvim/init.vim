@@ -22,7 +22,6 @@ call plug#begin(vimFolder.'/plugged')
 
   " Themes, remember to set terminal colors all well
   Plug 'altercation/vim-colors-solarized'
-  " Plug 'arcticicestudio/nord-vim'
   Plug 'shaunsingh/nord.nvim'
   Plug 'dracula/vim', {'as': 'dracula'}
 
