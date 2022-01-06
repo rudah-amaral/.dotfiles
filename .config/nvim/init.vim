@@ -210,7 +210,7 @@ nnoremap <left> <nop>
 nnoremap <right> <nop>
 inoremap <c-c> <esc>
 
-nnoremap <leader><space> :nohls<CR>
+nnoremap <leader>h :nohls<CR>
 nnoremap <leader>ev :sp $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC <bar> :doautocmd BufRead<CR>
 
