@@ -61,34 +61,17 @@ colorscheme nord
 
 lua require('plugin-settings/CoC')
 
-" let g:airline_theme = 'solarized'
-let g:airline_theme = 'base16_nord'
-" let g:airline_theme = 'dracula'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+lua require('plugin-settings/airline')
 
-let g:vimtex_view_general_options
-  \ = '-reuse-instance -forward-search @tex @line @pdf'
-  \ . ' -inverse-search "' . exepath(v:progpath)
-  \ . ' --servername ' . v:servername
-  \ . ' --remote-send \"^<C-\^>^<C-n^>'
-  \ . ':execute ''drop '' . fnameescape(''\%f'')^<CR^>'
-  \ . ':\%l^<CR^>:normal\! zzzv^<CR^>'
-  \ . ':call remote_foreground('''.v:servername.''')^<CR^>^<CR^>\""'
-" let g:vimtex_imaps_enabled = 0
-" let g:vimtex_imaps_leader = ';'
-let g:vimtex_matchparen_enabled = 0
+lua require('plugin-settings/vimtex')
 
-let g:UltiSnipsExpandTrigger="<c-j>"
+lua require('plugin-settings/UltiSnips')
 
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true
-  },
-  additional_vim_regex_highlighting = false,
-}
-EOF
+lua require('plugin-settings/tree-sitter')
+
+lua require('plugin-settings/netrw')
+
+lua require('plugin-settings/fugitive')
 
 " }}}
 
@@ -167,26 +150,11 @@ endif
 
 " }}}
 
-" {{{ VIM VARIABLES
-
-" let g:python_recommended_style=0
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-
-" }}}
-
 " {{{ MY FUNCTIONS
 
 " }}}
 
 " {{{ AUTOCMDS
-
-if has('autocmd')
-  augroup vimrc
-    autocmd!
-    autocmd BufReadPost fugitive://* set bufhidden=delete
-  augroup END
-endif
 
 " }}}
 
