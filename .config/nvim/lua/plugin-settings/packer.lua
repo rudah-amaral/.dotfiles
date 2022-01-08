@@ -33,13 +33,13 @@ require('packer').startup(function(use)
   end
 end)
 
-require('plugin-settings/CoC')
+vim.cmd('source ~/.config/nvim/lua/plugin-settings/CoC.vim')
 require('plugin-settings/tree-sitter')
-require('plugin-settings/UltiSnips')
-require('plugin-settings/vimtex')
-require('plugin-settings/airline')
-require('plugin-settings/fugitive')
-require('plugin-settings/netrw')
+vim.cmd('source ~/.config/nvim/lua/plugin-settings/UltiSnips.vim')
+vim.cmd('source ~/.config/nvim/lua/plugin-settings/vimtex.vim')
+vim.cmd('source ~/.config/nvim/lua/plugin-settings/airline.vim')
+vim.cmd('source ~/.config/nvim/lua/plugin-settings/fugitive.vim')
+vim.cmd('source ~/.config/nvim/lua/plugin-settings/netrw.vim')
 
 vim.cmd([[
   augroup packer_user_config
