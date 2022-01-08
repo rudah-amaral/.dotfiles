@@ -1,5 +1,3 @@
--- {{{ PLUGINS
-
 local vimFolder
 if vim.fn.has('nvim') == 1 then
   vimFolder = vim.fn.stdpath('config')
@@ -9,51 +7,7 @@ else
   vimFolder = vim.fn.expand('~/vimfiles')
 end
 
-local vimPlugAutoload = vimFolder..'/autoload/plug.vim'
-if vim.fn.empty(vim.fn.glob(vimPlugAutoload)) == 1 then
-  local url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-  local cmd = "silent execute '!curl -fLo "..vimPlugAutoload.. " --create-dirs "..url.."'"
-  vim.api.nvim_command(cmd)
-  vim.cmd("autocmd VimEnter * PlugInstall --sync | source $MYVIMRC")
-end
-
-Plug = vim.fn['plug#']
-vim.fn["plug#begin"](vimFolder..'/plugged')
--- Vim-plug can manage itself
-Plug 'junegunn/vim-plug'
--- The Big Guns™
-Plug('neoclide/coc.nvim', {branch = 'release'})
-Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
-Plug 'SirVer/ultisnips'
-Plug 'mattn/emmet-vim'
-Plug 'lervag/vimtex'
--- Themes and alike
-Plug 'shaunsingh/nord.nvim'
-Plug('dracula/vim', {as = 'dracula'})
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
--- The ones that pack a punch
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-commentary'
-Plug 'ThePrimeagen/vim-be-good'
-Plug 'mateusbraga/vim-spell-pt-br'
-vim.fn["plug#end"]()
-
--- }}}
-
--- {{{ PLUGINS SETTINGS
-
-require('plugin-settings/CoC')
-require('plugin-settings/tree-sitter')
-require('plugin-settings/UltiSnips')
-require('plugin-settings/vimtex')
-require('plugin-settings/airline')
-require('plugin-settings/fugitive')
-require('plugin-settings/netrw')
-
--- }}}
+require('plugin-settings/packer')
 
 -- {{{ VIM OPTIONS
 
