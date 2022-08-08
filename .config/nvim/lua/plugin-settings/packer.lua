@@ -35,7 +35,7 @@ require('packer').startup(function(use)
 end)
 
 vim.cmd('source ~/.config/nvim/lua/plugin-settings/CoC.vim')
-require('plugin-settings/tree-sitter')
+vim.cmd('luafile ~/.config/nvim/lua/plugin-settings/tree-sitter.lua')
 vim.cmd('source ~/.config/nvim/lua/plugin-settings/UltiSnips.vim')
 vim.cmd('source ~/.config/nvim/lua/plugin-settings/vimtex.vim')
 vim.cmd('source ~/.config/nvim/lua/plugin-settings/airline.vim')

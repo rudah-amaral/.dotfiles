@@ -108,8 +108,8 @@ vim.api.nvim_set_keymap("n",
 )
 vim.api.nvim_set_keymap("n",
   "<leader>sv",
-  ":source $MYVIMRC <bar> :doautocmd BufRead<CR>",
-  { noremap = true, silent = true }
+  ":lua package.loaded['plugin-settings/packer'] = nil<cr>:luafile ~/.config/nvim/init.lua<cr>",
+  { noremap = true }
 )
 
 if vim.fn.has('clipboard') == 1 then
