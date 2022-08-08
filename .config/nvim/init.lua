@@ -111,9 +111,6 @@ vim.api.nvim_set_keymap("n",
   { noremap = true, silent = true }
 )
 
-vim.api.nvim_set_keymap("v", "J", ":m '>+1<CR>gv=gv", { noremap = true })
-vim.api.nvim_set_keymap("v", "K", ":m '<-2<CR>gv=gv", { noremap = true })
-
 if vim.fn.has('clipboard') == 1 then
   vim.api.nvim_set_keymap("v", "<c-c>", '"+y<esc>', { noremap = true })
   vim.api.nvim_set_keymap("v", "<c-v>", 'v"+p<esc>', { noremap = true })

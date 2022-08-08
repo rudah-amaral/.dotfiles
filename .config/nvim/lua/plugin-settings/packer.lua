@@ -26,6 +26,7 @@ require('packer').startup(function(use)
   use 'tpope/vim-commentary'
   use 'ThePrimeagen/vim-be-good'
   use 'mateusbraga/vim-spell-pt-br'
+  use 'matze/vim-move'
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packerFirstInstall then
