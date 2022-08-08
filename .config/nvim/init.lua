@@ -93,7 +93,7 @@ vim.api.nvim_set_keymap("n", "<right>", "<nop>", { noremap = true})
 vim.api.nvim_set_keymap("n", "<leader><space>", "za", { noremap = true })
 vim.api.nvim_set_keymap("n",
   "<leader>ev",
-  ":sp $MYVIMRC<CR>",
+  ":sp $MYVIMRC | lcd %:h<CR>",
   { noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap("n",
