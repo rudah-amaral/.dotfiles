@@ -9,14 +9,23 @@ require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   -- The Big Guns™
-  use { 'neoclide/coc.nvim', branch = 'release' }
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use {
+    'neoclide/coc.nvim',
+    branch = 'release'
+  }
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
   use 'SirVer/ultisnips'
   use 'mattn/emmet-vim'
   use 'lervag/vimtex'
   -- Themes and alike
   use 'shaunsingh/nord.nvim'
-  use { 'dracula/vim', as = 'dracula' }
+  use {
+    'dracula/vim',
+    as = 'dracula'
+  }
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
   use 'ryanoasis/vim-devicons'
