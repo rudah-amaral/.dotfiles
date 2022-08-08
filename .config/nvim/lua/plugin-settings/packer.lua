@@ -53,6 +53,7 @@ vim.cmd('source ~/.config/nvim/lua/plugin-settings/vimtex.vim')
 vim.cmd('luafile ~/.config/nvim/lua/plugin-settings/lualine.lua')
 vim.cmd('source ~/.config/nvim/lua/plugin-settings/fugitive.vim')
 vim.cmd('luafile ~/.config/nvim/lua/plugin-settings/Comment.lua')
+vim.cmd('source ~/.config/nvim/lua/plugin-settings/nord.vim')
 vim.cmd('source ~/.config/nvim/lua/plugin-settings/netrw.vim')
 vim.cmd('source ~/.config/nvim/lua/plugin-settings/EditorConfig.vim')
 
