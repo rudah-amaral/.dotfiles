@@ -7,6 +7,8 @@ else
   vimFolder = vim.fn.expand('~/vimfiles')
 end
 
+vim.g.mapleader = ' '
+
 require('plugin-settings/packer')
 
 -- {{{ VIM OPTIONS
@@ -16,7 +18,6 @@ require('plugin-settings/packer')
 -- " through help tags is mapped with [c-ç] on a ABNT layout.
 vim.cmd('colorscheme nord')
 vim.cmd('filetype plugin indent on')
-vim.g.mapleader = ' '
 vim.opt.expandtab   = true -- Tabs are spaces
 vim.opt.tabstop     = 2 -- 2 spaces
 vim.opt.softtabstop = 2 -- A <BS> is 2 spaces
