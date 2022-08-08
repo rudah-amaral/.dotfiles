@@ -119,6 +119,10 @@ alias dotfilesDiff="GIT_DIR=$HOME/dotfiles nvim ~ -c G -c only"
 # This should be set when dotfiles repo is cloned with --bare flag
 # dotfiles config --unset core.bare
 
+# I have yarn installed by corepack which was shipped with Node 18. For some
+# reason the global packaged weren't avaible through the PATH so I added them
+# manually.
+export PATH="/home/rud___boy/.yarn/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
