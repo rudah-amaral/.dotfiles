@@ -33,6 +33,7 @@ require('packer').startup(function(use)
   -- The ones that pack a punch
   use 'tpope/vim-fugitive'
   use 'tpope/vim-unimpaired'
+  use 'tpope/vim-surround'
   use 'numToStr/Comment.nvim'
   use 'ThePrimeagen/vim-be-good'
   use 'mateusbraga/vim-spell-pt-br'
