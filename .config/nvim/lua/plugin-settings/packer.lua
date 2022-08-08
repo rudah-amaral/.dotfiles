@@ -20,6 +20,13 @@ require('packer').startup(function(use)
   use 'SirVer/ultisnips'
   use 'mattn/emmet-vim'
   use 'lervag/vimtex'
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      {'nvim-lua/plenary.nvim'},
+      {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    }
+  }
   -- Themes and alike
   use 'shaunsingh/nord.nvim'
   use {
@@ -50,6 +57,7 @@ vim.cmd('source ~/.config/nvim/lua/plugin-settings/CoC.vim')
 vim.cmd('luafile ~/.config/nvim/lua/plugin-settings/tree-sitter.lua')
 vim.cmd('source ~/.config/nvim/lua/plugin-settings/UltiSnips.vim')
 vim.cmd('source ~/.config/nvim/lua/plugin-settings/vimtex.vim')
+vim.cmd('luafile ~/.config/nvim/lua/plugin-settings/telescope.lua')
 vim.cmd('luafile ~/.config/nvim/lua/plugin-settings/lualine.lua')
 vim.cmd('source ~/.config/nvim/lua/plugin-settings/fugitive.vim')
 vim.cmd('luafile ~/.config/nvim/lua/plugin-settings/Comment.lua')
