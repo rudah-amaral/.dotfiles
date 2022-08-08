@@ -111,6 +111,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 alias dotfilesDiff="GIT_DIR=$HOME/dotfiles nvim ~ -c G -c only"
+alias exa="exa --icons"
 
 # Those should be set only once
 # dotfiles config --local status.showUntrackedFiles no
