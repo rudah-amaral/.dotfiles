@@ -64,6 +64,7 @@ vim.cmd('luafile ~/.config/nvim/lua/plugin-settings/Comment.lua')
 vim.cmd('source ~/.config/nvim/lua/plugin-settings/nord.vim')
 vim.cmd('source ~/.config/nvim/lua/plugin-settings/netrw.vim')
 vim.cmd('source ~/.config/nvim/lua/plugin-settings/EditorConfig.vim')
+vim.cmd('source ~/.config/nvim/lua/plugin-settings/joke.vim')
 
 vim.cmd([[
   augroup packer_user_config
