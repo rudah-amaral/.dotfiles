@@ -26,9 +26,10 @@ require('packer').startup(function(use)
     'dracula/vim',
     as = 'dracula'
   }
-  use 'vim-airline/vim-airline'
-  use 'vim-airline/vim-airline-themes'
-  use 'ryanoasis/vim-devicons'
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
   -- The ones that pack a punch
   use 'tpope/vim-fugitive'
   use 'tpope/vim-unimpaired'
@@ -47,7 +48,7 @@ vim.cmd('source ~/.config/nvim/lua/plugin-settings/CoC.vim')
 vim.cmd('luafile ~/.config/nvim/lua/plugin-settings/tree-sitter.lua')
 vim.cmd('source ~/.config/nvim/lua/plugin-settings/UltiSnips.vim')
 vim.cmd('source ~/.config/nvim/lua/plugin-settings/vimtex.vim')
-vim.cmd('source ~/.config/nvim/lua/plugin-settings/airline.vim')
+vim.cmd('luafile ~/.config/nvim/lua/plugin-settings/lualine.lua')
 vim.cmd('source ~/.config/nvim/lua/plugin-settings/fugitive.vim')
 vim.cmd('source ~/.config/nvim/lua/plugin-settings/netrw.vim')
 
