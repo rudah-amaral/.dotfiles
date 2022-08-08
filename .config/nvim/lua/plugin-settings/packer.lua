@@ -37,6 +37,7 @@ require('packer').startup(function(use)
   use 'numToStr/Comment.nvim'
   use 'ThePrimeagen/vim-be-good'
   use 'mateusbraga/vim-spell-pt-br'
+  use 'editorconfig/editorconfig-vim'
   use 'matze/vim-move'
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
@@ -53,6 +54,7 @@ vim.cmd('luafile ~/.config/nvim/lua/plugin-settings/lualine.lua')
 vim.cmd('source ~/.config/nvim/lua/plugin-settings/fugitive.vim')
 vim.cmd('luafile ~/.config/nvim/lua/plugin-settings/Comment.lua')
 vim.cmd('source ~/.config/nvim/lua/plugin-settings/netrw.vim')
+vim.cmd('source ~/.config/nvim/lua/plugin-settings/EditorConfig.vim')
 
 vim.cmd([[
   augroup packer_user_config
