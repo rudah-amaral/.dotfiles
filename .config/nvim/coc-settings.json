@@ -1,4 +1,35 @@
 {
+  // DEFAULT SCHEME PROPERTIES NAMESPACES
+  // http
+  // npm
+  // suggest
+  "suggest.floatConfig": {
+    "border": true,
+    "rounded": true
+  },
+  "suggest.preferCompleteThanJumpPlaceholder": true,
+  "suggest.virtualText": true,
+  // documentHighlight
+  // colors
+  // links
+  // diagnostic
+  "diagnostic.checkCurrentLine": true,
+  // pullDiagnostic
+  // signature
+  // codeLens
+  // refactor
+  // hover
+  // dialog
+  // notification
+  // workspace
+  // list
+  // cursors
+  // semanticTokens
+  // tree
+  // outline
+  // callHierarchy
+  // floatFactory
+  // coc.preferences
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "scss",
@@ -7,7 +38,15 @@
     "typescript",
     "typescriptreact"
   ],
+  // coc.source
+  "coc.source.buffer.shortcut": "Other buffers",
+  "coc.source.around.shortcut": "This buffer",
+  // languageserver
+
+  // EXTENSIONS SCHEME PROPERTIES NAMESPACES
   "Lua.diagnostics.globals": [
     "vim"
-  ]
+  ],
+  "tsserver.npm": "/home/rud___boy/.nvm/versions/node/v16.16.0/bin/npm"
 }
+// vim: filetype=jsonc
