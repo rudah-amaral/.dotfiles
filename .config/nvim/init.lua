@@ -9,14 +9,13 @@ end
 
 vim.g.mapleader = ' '
 
-require('plugin-settings/packer')
+require('plugins')
 
 -- {{{ VIM OPTIONS
 
 -- " When in doubt call :help.
 -- " Vim doesn't like keyboard layouts other than US-International, e.g. jumping
 -- " through help tags is mapped with [c-ç] on a ABNT layout.
-vim.cmd('colorscheme nord')
 vim.cmd('filetype plugin indent on')
 vim.opt.expandtab   = true -- Tabs are spaces
 vim.opt.tabstop     = 2 -- 2 spaces
