@@ -109,8 +109,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
-alias dotfilesDiff="GIT_DIR=$HOME/dotfiles nvim ~ -c G -c only"
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias dotfilesDiff="GIT_DIR=$HOME/.dotfiles nvim ~ -c G -c only"
 alias exa="exa --icons"
 
 # Those should be set only once
