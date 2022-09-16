@@ -5,5 +5,8 @@
 [user]
 	name = Rudah Amaral
 	email = 19709437+rudah-amaral@users.noreply.github.com
+[credential]
+  ; Assuming I'm on WSL
+	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager-core.exe
 [commit]
 	gpgsign = true
