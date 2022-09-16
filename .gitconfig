@@ -1,0 +1,9 @@
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim
+[user]
+	name = Rudah Amaral
+	email = 19709437+rudah-amaral@users.noreply.github.com
+[commit]
+	gpgsign = true
