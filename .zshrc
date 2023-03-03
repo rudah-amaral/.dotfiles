@@ -130,13 +130,20 @@ export PATH="/home/rud___boy/.yarn/bin:$PATH"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # Windows Terminal needs this to open a new tab or pane on the same working
 # directory.
 keep_current_path() {
   printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
 }
 precmd_functions+=(keep_current_path)
+
+# Volta install path
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+update-completions() {
+  local dir=$ZSH/completions
+
+  # volta
+  volta completions -f -o $ZSH/completions/_volta zsh
+}
