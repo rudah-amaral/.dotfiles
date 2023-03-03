@@ -56,6 +56,10 @@ packer.startup(function(use)
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
     config = get_setup("lualine", "lua")
   }
+  use {
+    "xiyaowong/nvim-transparent",
+    config = get_setup("nvim-transparent", "lua")
+  }
   -- The ones that pack a punch
   use {
     "tpope/vim-fugitive",
