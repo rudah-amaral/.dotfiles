@@ -29,10 +29,6 @@ packer.startup(function(use)
     run = ":TSUpdate",
     config = get_setup("tree-sitter", "lua")
   }
-  use {
-    "SirVer/ultisnips",
-    config = get_setup("UltiSnips", "vim")
-  }
   use "mattn/emmet-vim"
   use {
     "lervag/vimtex",
