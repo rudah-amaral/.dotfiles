@@ -36,6 +36,15 @@ packer.startup(function(use)
     },
     config = get_setup("mason", "lua"),
   }
+  use {
+    "hrsh7th/nvim-cmp",
+    requires = {
+      "hrsh7th/cmp-nvim-lsp",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
+    },
+    config = get_setup("cmp", "lua"),
+  }
   use "mattn/emmet-vim"
   use {
     "lervag/vimtex",
