@@ -24,6 +24,18 @@ packer.startup(function(use)
     run = ":TSUpdate",
     config = get_setup("tree-sitter", "lua")
   }
+  use {
+    -- Manages LSPs, DAPs and formatters
+    "williamboman/mason.nvim",
+    requires = {
+      -- Automatically sets up lua-language-server and +
+      "folke/neodev.nvim",
+      -- LSPs
+      "neovim/nvim-lspconfig",
+      "williamboman/mason-lspconfig.nvim",
+    },
+    config = get_setup("mason", "lua"),
+  }
   use "mattn/emmet-vim"
   use {
     "lervag/vimtex",
