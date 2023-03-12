@@ -60,7 +60,19 @@ end
 -- be passed to the `settings` field of the server config and serve as the
 -- default settings. Configure per project using their respective settings file.
 local servers = {
-  -- lua_ls = {},
+  lua_ls = {
+    -- Configuration file: .luarc.json
+    Lua = {
+      telemetry = { enable = false },
+      workspace = { checkThirdParty = false },
+      format = {
+        enable = false,
+      },
+      completion = {
+        callSnippet = "Replace",
+      },
+    },
+  },
 }
 
 require("neodev").setup()
