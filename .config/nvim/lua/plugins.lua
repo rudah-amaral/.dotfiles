@@ -5,12 +5,13 @@ if vim.fn.empty(vim.fn.glob(packerPath)) == 1 then
   isPackerFirstInstall = vim.fn.system({"git", "clone", "--depth", "1", packerRepo, packerPath})
 end
 
-local get_setup = function(name, ext)
+local getSetup = function(fileName)
+  local ext = string.sub(fileName, -3, -1)
   if ext == "lua" then
-    return string.format("require(\"setup/%s\")", name)
+    return string.format('require("setup/%s")', string.sub(fileName, 1, -5))
   elseif ext == "vim" then
-    local setupFolder = vim.fn.stdpath("config").."/lua/setup"
-    return string.format("vim.cmd(\"source "..setupFolder.."/%s.vim\")", name)
+    local setupFolder = vim.fn.stdpath("config") .. "/lua/setup"
+    return string.format('vim.cmd("source ' .. setupFolder .. '/%s")', fileName)
   end
 end
 
@@ -22,7 +23,7 @@ packer.startup(function(use)
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
-    config = get_setup("tree-sitter", "lua")
+    config = getSetup("tree-sitter.lua")
   }
   use {
     -- Manages LSPs, DAPs and formatters
@@ -34,7 +35,7 @@ packer.startup(function(use)
       "neovim/nvim-lspconfig",
       "williamboman/mason-lspconfig.nvim",
     },
-    config = get_setup("mason", "lua"),
+    config = getSetup("mason.lua"),
   }
   use {
     "hrsh7th/nvim-cmp",
@@ -43,12 +44,12 @@ packer.startup(function(use)
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
     },
-    config = get_setup("cmp", "lua"),
+    config = getSetup("cmp.lua"),
   }
   use "mattn/emmet-vim"
   use {
     "lervag/vimtex",
-    config = get_setup("vimtex", "vim")
+    config = getSetup("vimtex.vim")
   }
   use {
     "nvim-telescope/telescope.nvim",
@@ -56,7 +57,7 @@ packer.startup(function(use)
       { "nvim-lua/plenary.nvim" },
       { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
     },
-    config = get_setup("telescope", "lua")
+    config = getSetup("telescope.lua")
   }
   -- Themes and alike
   use {
@@ -65,33 +66,33 @@ packer.startup(function(use)
   }
   use {
     "Mofiqul/dracula.nvim",
-    setup = get_setup("dracula", "lua"),
+    setup = getSetup("dracula.lua"),
   }
   use {
     "nvim-lualine/lualine.nvim",
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
-    config = get_setup("lualine", "lua")
+    config = getSetup("lualine.lua")
   }
   use {
     "xiyaowong/nvim-transparent",
-    config = get_setup("nvim-transparent", "lua")
+    config = getSetup("nvim-transparent.lua")
   }
   -- The ones that pack a punch
   use {
     "tpope/vim-fugitive",
-    config = get_setup("fugitive", "vim")
+    config = getSetup("fugitive.vim")
   }
   use "tpope/vim-unimpaired"
   use "tpope/vim-surround"
   use {
     "numToStr/Comment.nvim",
-    config = get_setup("Comment", "lua")
+    config = getSetup("Comment.lua")
   }
   use "ThePrimeagen/vim-be-good"
   use "mateusbraga/vim-spell-pt-br"
   use {
     "editorconfig/editorconfig-vim",
-    config = get_setup("EditorConfig", "vim")
+    config = getSetup("EditorConfig.vim")
   }
   use "matze/vim-move"
 
@@ -102,8 +103,8 @@ packer.startup(function(use)
   end
 end)
 
-vim.cmd("source "..vim.fn.stdpath("config").."/lua/setup/netrw.vim")
-vim.cmd("source "..vim.fn.stdpath("config").."/lua/setup/joke.vim")
+loadstring(getSetup("netrw.vim"))()
+loadstring(getSetup("joke.vim"))()
 
 vim.cmd([[
   augroup packer_user_config
