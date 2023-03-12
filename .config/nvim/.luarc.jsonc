@@ -1,0 +1,25 @@
+{
+  "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+  "format": {
+    "enable": true,
+    // https://github.com/CppCXY/EmmyLuaCodeStyle/blob/master/docs/format_config_EN.md
+    "defaultConfig": {
+      // These don't work. Editor settings prevail.
+      // "indent_style": "tab",
+      // "indent_size": "8",
+      "quote_style": "double",
+      "call_arg_parentheses": "keep",
+      "insert_final_newline": "false",
+      "continuation_indent": "8",
+      "max_line_length": "80",
+      "align_call_args": "false",
+      "align_function_params": "false",
+      "align_continuous_assign_statement": "true",
+      "align_continuous_rect_table_field": "true",
+      "align_if_branch": "false",
+      "align_array_table": "true",
+      "never_indent_before_if_condition": "true",
+      "never_indent_comment_on_if_branch": "false"
+    }
+  }
+}
