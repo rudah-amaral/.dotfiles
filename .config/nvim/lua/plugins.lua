@@ -99,6 +99,10 @@ packer.startup(function(use)
     "tpope/vim-fugitive",
     config = getSetup("fugitive.lua"),
   })
+  use({
+    "lewis6991/gitsigns.nvim",
+    config = getSetup("gitsigns.lua"),
+  })
   use("tpope/vim-unimpaired")
   use("tpope/vim-surround")
   use({
