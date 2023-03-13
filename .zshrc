@@ -108,18 +108,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# New machine? clone the dotfiles repo
-# git clone https://github.com/rudah-amaral/.dotfiles --bare 
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
-# Makes repo not show status on explicitly untracked file
-# dotfiles config --local status.showUntrackedFiles no
-# Makes fugitive's :G actually show files
-# dotfiles config --local core.worktree $HOME
-# Although core.worktree is set, fugitive will not complain that it isn't
-# compatible with core.bare as long as GIT_WORK_TREE=$HOME is set for the alias
+alias dotfiles="git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 alias dotfilesDiff="GIT_DIR=$HOME/.dotfiles.git GIT_WORK_TREE=$HOME nvim ~ -c G -c only"
-
 alias exa="exa --icons"
 
 # I have yarn installed by corepack which was shipped with Node 18. For some
