@@ -5,14 +5,13 @@
 [user]
 	name = Rudah Amaral
 	email = 19709437+rudah-amaral@users.noreply.github.com
+	signingkey = 19709437+rudah-amaral@users.noreply.github.com
 [credential]
   ; Assuming I'm on WSL
 	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager-core.exe
 [commit]
 	gpgsign = true
   template = /home/rud___boy/.gitmessage
-[include]
-  path = ~/.gitconfig-keys
 ; Loads ~/dev/.gitconfig only if inside a folder inside ~/dev
 ; Useful if you have multiple profiles and/or signing keys
 [includeIf "gitdir:~/dev/"]
