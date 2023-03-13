@@ -101,4 +101,13 @@ vim.api.nvim_set_keymap("n", "<leader>sv", ":luafile ~/.config/nvim/init.lua<cr>
 
 -- }}}
 
+local highlight_group = vim.api.nvim_create_augroup("YankHighlight",
+  { clear = true })
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    require("vim.highlight").on_yank({ timeout = 5000 })
+  end,
+  group = highlight_group,
+  pattern = "*",
+})
 -- vim: foldmethod=marker: foldlevel=0
