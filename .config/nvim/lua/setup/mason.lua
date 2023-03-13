@@ -73,6 +73,9 @@ local servers = {
       },
     },
   },
+  vimls = {
+    -- Barely customizable, no config file
+  }
 }
 
 require("neodev").setup()
