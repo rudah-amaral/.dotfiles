@@ -117,9 +117,11 @@ end)
 loadstring(getSetup("netrw.vim"))()
 loadstring(getSetup("joke.vim"))()
 
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost ~/.config/nvim/lua/plugins.lua source % | PackerCompile
-  augroup end
-]])
+local sourceAndCompileGroup = vim.api.nvim_create_augroup("packer_user_config", {
+  clear = true,
+})
+vim.api.nvim_create_autocmd("BufWritePost", {
+  group = sourceAndCompileGroup,
+  pattern = vim.fn.expand("~/.config/nvim/lua/plugins.lua"),
+  command = "source % | PackerCompile",
+})
