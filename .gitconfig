@@ -12,7 +12,6 @@
 [commit]
 	gpgsign = true
   template = /home/rud___boy/.gitmessage
-; Loads ~/dev/.gitconfig only if inside a folder inside ~/dev
-; Useful if you have multiple profiles and/or signing keys
-[includeIf "gitdir:~/dev/"]
-  path = ~/dev/.gitconfig
+; ; In case of needing additional configurations depending on environment
+; [includeIf "gitdir:~/dev/"]
+;   path = ~/dev/.gitconfig
