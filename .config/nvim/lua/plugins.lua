@@ -88,6 +88,12 @@ packer.startup(function(use)
     "xiyaowong/nvim-transparent",
     config = getSetup("nvim-transparent.lua"),
   })
+  use({
+    "lukas-reineke/indent-blankline.nvim",
+    -- Enable `lukas-reineke/indent-blankline.nvim`
+    -- See `:help indent_blankline.txt`
+    config = getSetup("indent_blankline.lua"),
+  })
   -- The ones that pack a punch
   use({
     "tpope/vim-fugitive",
