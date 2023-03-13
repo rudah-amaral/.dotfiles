@@ -50,6 +50,7 @@ packer.startup(function(use)
   })
   use({
     "mattn/emmet-vim",
+    config = getSetup("emmet.vim"),
   })
   use({
     "lervag/vimtex",
