@@ -10,6 +10,7 @@
 	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager-core.exe
 [commit]
 	gpgsign = true
+  template = /home/rud___boy/.gitmessage
 [include]
   path = ~/.gitconfig-keys
 ; Loads ~/dev/.gitconfig only if inside a folder inside ~/dev
