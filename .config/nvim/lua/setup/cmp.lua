@@ -35,7 +35,7 @@ cmp.setup {
         fallback()
       end
     end, { "i", "s" }),
-    ["<c-Space>"] = cmp.mapping.complete {},
+    ["<c-Space>"] = cmp.mapping.complete({}),
   },
 
   sources = {

@@ -26,32 +26,17 @@ require("telescope").setup {
   }
 }
 
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>tf",
-  "<cmd>lua require('telescope.builtin').find_files()<cr>",
-  { noremap = true }
-)
+vim.api.nvim_set_keymap("n", "<leader>tf",
+  "<cmd>lua require('telescope.builtin').find_files()<cr>", { noremap = true })
 
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>tg",
-  "<cmd>lua require('telescope.builtin').live_grep()<cr>",
-  { noremap = true }
-)
+vim.api.nvim_set_keymap("n", "<leader>tg",
+  "<cmd>lua require('telescope.builtin').live_grep()<cr>", { noremap = true })
 
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>t/",
+vim.api.nvim_set_keymap("n", "<leader>t/",
   "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>",
-  { noremap = true }
-)
+  { noremap = true })
 
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>tc",
-  "<cmd>lua require('telescope.builtin').colorscheme()<cr>",
-  { noremap = true }
-)
+vim.api.nvim_set_keymap("n", "<leader>tc",
+  "<cmd>lua require('telescope.builtin').colorscheme()<cr>", { noremap = true })
 
-require('telescope').load_extension('fzf')
+require("telescope").load_extension("fzf")

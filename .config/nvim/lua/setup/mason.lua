@@ -39,8 +39,8 @@ local on_attach = function(_, bufnr)
   -- Format on save
   local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
   vim.api.nvim_create_autocmd("BufWritePre", {
-    group = augroup,
-    buffer = bufnr,
+    group    = augroup,
+    buffer   = bufnr,
     callback = function()
       vim.lsp.buf.format({
         bufnr = bufnr,
@@ -48,9 +48,9 @@ local on_attach = function(_, bufnr)
     end,
   })
   -- Create a command `:Format` local to the LSP buffer
-  vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
-    vim.lsp.buf.format()
-  end, { desc = "Format current buffer with LSP" })
+  vim.api.nvim_buf_create_user_command(bufnr, "Format",
+  function(_) vim.lsp.buf.format() end,
+  { desc = "Format current buffer with LSP" })
 end
 
 -- The following language servers will automatically be installed. Use their
@@ -90,9 +90,9 @@ mason_lspconfig.setup_handlers({
       -- completion
       capabilities = capabilities,
       -- mappings and user commands
-      on_attach = on_attach,
+      on_attach    = on_attach,
       -- Override server's default configuration
-      settings = servers[server_name],
+      settings     = servers[server_name],
     })
   end,
 })
