@@ -91,7 +91,7 @@ packer.startup(function(use)
   -- The ones that pack a punch
   use({
     "tpope/vim-fugitive",
-    config = getSetup("fugitive.vim")
+    config = getSetup("fugitive.lua"),
   })
   use("tpope/vim-unimpaired")
   use("tpope/vim-surround")
