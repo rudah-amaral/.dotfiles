@@ -20,11 +20,6 @@ packer.startup(function(use)
   use "wbthomason/packer.nvim"
   -- The Big Guns™
   use {
-    "neoclide/coc.nvim",
-    branch = "release",
-    config = get_setup("CoC", "vim")
-  }
-  use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
     config = get_setup("tree-sitter", "lua")
