@@ -1,7 +1,7 @@
 # Welcome to my dotfiles repo!
 ### How to install them?
 ```
-git clone https://github.com/rudah-amaral/.dotfiles $HOME/.dotfiles --bare 
+git clone https://github.com/rudah-amaral/.dotfiles $HOME/.dotfiles.git --bare 
 git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME reset --hard
 ```
 ### How to make repo not show the status of untracked files
