@@ -61,9 +61,6 @@ local servers = {
     Lua = {
       telemetry = { enable = false },
       workspace = { checkThirdParty = false },
-      format = {
-        enable = false,
-      },
       completion = {
         callSnippet = "Replace",
       },
