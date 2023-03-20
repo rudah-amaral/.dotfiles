@@ -3,9 +3,40 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
+local has_null_ls_formatter = function(file_type)
+  local sources = require("null-ls.sources")
+  return #sources.get_available(file_type, "NULL_LS_FORMATTING") > 0
+end
+
+local format = function(bufnr)
+  local buffer_filetype = vim.bo[bufnr].filetype
+
+  vim.lsp.buf.format({
+    bufnr = bufnr,
+    filter = function(client)
+      if has_null_ls_formatter(buffer_filetype) then
+        return client.name == "null-ls"
+      end
+      return true
+    end,
+  })
+end
+
+local formatting_group = vim.api.nvim_create_augroup("Formatting Group", {})
+local format_on_write = function(bufnr)
+  vim.api.nvim_clear_autocmds({ group = formatting_group, buffer = bufnr })
+  vim.api.nvim_create_autocmd("BufWritePre", {
+    group = formatting_group,
+    buffer = bufnr,
+    callback = function()
+      format(bufnr)
+    end
+  })
+end
+
 -- LSP settings.
 -- This function gets run when an LSP connects to a particular buffer.
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
   local nmap = function(keys, func, desc)
     if desc then
       desc = "LSP: " .. desc
@@ -36,17 +67,9 @@ local on_attach = function(_, bufnr)
   --   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   -- end, "[W]orkspace [L]ist Folders")
 
-  -- Format on save
-  local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    group    = augroup,
-    buffer   = bufnr,
-    callback = function()
-      vim.lsp.buf.format({
-        bufnr = bufnr,
-      })
-    end,
-  })
+  if client.supports_method("textDocument/formatting") then
+    format_on_write(bufnr)
+  end
 end
 
 -- The following language servers will automatically be installed. Use their
@@ -93,3 +116,16 @@ mason_lspconfig.setup_handlers({
     })
   end,
 })
+
+require("mason-null-ls").setup({
+  ensure_installed = { },
+  automatic_installation = false,
+  automatic_setup = true, -- Recommended, but optional
+})
+
+local null_ls = require("null-ls")
+null_ls.setup({
+  on_attach = on_attach
+})
+
+require("mason-null-ls").setup_handlers({}) -- If `automatic_setup` is true.

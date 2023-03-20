@@ -36,6 +36,9 @@ packer.startup(function(use)
       -- LSPs
       "neovim/nvim-lspconfig",
       "williamboman/mason-lspconfig.nvim",
+      -- Formatters and linters
+      "jose-elias-alvarez/null-ls.nvim",
+      "jay-babu/mason-null-ls.nvim"
     },
     config = getSetup("mason.lua"),
   })
