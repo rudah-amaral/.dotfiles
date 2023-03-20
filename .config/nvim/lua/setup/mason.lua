@@ -118,7 +118,9 @@ mason_lspconfig.setup_handlers({
 })
 
 require("mason-null-ls").setup({
-  ensure_installed = { },
+  ensure_installed = {
+    "prettierd"
+  },
   automatic_installation = false,
   automatic_setup = true, -- Recommended, but optional
 })
