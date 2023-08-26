@@ -125,6 +125,14 @@ packer.startup(function(use)
     config = getSetup("EditorConfig.vim"),
   })
   use("matze/vim-move")
+  use {
+    "stevearc/oil.nvim",
+    requires = {
+      "kyazdani42/nvim-web-devicons",
+      opt = true,
+    },
+    config = getSetup("oil.lua")
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

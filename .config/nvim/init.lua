@@ -93,8 +93,7 @@ vim.api.nvim_set_keymap("n", "<leader>ev", ":sp $MYVIMRC | lcd %:h<CR>",
   { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>h", ":nohls<CR>",
   { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>pv",
-  ":wincmd v <bar> :Ex <bar> :vertical resize 30<CR>",
+vim.api.nvim_set_keymap("n", "<leader>pv", ":Oil<CR>",
   { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>sv", ":luafile ~/.config/nvim/init.lua<cr>",
   { noremap = true })
