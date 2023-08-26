@@ -84,3 +84,8 @@ update-completions() {
   # volta
   volta completions -f -o $ZSH/completions/_volta zsh
 }
+
+# Tex Live paths
+export MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man"
+export INFOPATH="$INFOPATH:/usr/local/texlive/2023/texmf-dist/doc/info"
+export PATH="$PATH:/usr/local/texlive/2023/bin/x86_64-linux"
