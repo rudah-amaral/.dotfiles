@@ -39,4 +39,7 @@ vim.api.nvim_set_keymap("n", "<leader>t/",
 vim.api.nvim_set_keymap("n", "<leader>tc",
   "<cmd>lua require('telescope.builtin').colorscheme()<cr>", { noremap = true })
 
+vim.api.nvim_set_keymap("n", "<leader>tb",
+  "<cmd>lua require('telescope.builtin').buffers()<cr>", { noremap = true })
+
 require("telescope").load_extension("fzf")
