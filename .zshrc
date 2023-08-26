@@ -56,7 +56,10 @@ fi
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 alias dotfiles="git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
-alias dotfilesDiff="GIT_DIR=$HOME/.dotfiles.git GIT_WORK_TREE=$HOME nvim ~ -c G -c only"
+function() {
+  local nvimCmd=" nvim +'cd ~ | G | only'"
+  alias dotfilesDiff="GIT_DIR=$HOME/.dotfiles.git GIT_WORK_TREE=$HOME $nvimCmd"
+}
 alias exa="exa --icons"
 
 # I have yarn installed by corepack which was shipped with Node 18. For some
