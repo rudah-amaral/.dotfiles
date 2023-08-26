@@ -89,3 +89,6 @@ update-completions() {
 export MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man"
 export INFOPATH="$INFOPATH:/usr/local/texlive/2023/texmf-dist/doc/info"
 export PATH="$PATH:/usr/local/texlive/2023/bin/x86_64-linux"
+
+export PRETTIERD_LOCAL_PRETTIER_ONLY=true
+export ESLINT_D_LOCAL_ESLINT_ONLY=true

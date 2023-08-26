@@ -119,7 +119,8 @@ mason_lspconfig.setup_handlers({
 
 require("mason-null-ls").setup({
   ensure_installed = {
-    "prettierd"
+    "prettierd",
+    "eslint_d"
   },
   automatic_installation = false,
   handlers = {},
