@@ -120,10 +120,6 @@ packer.startup(function(use)
   })
   use("ThePrimeagen/vim-be-good")
   use("mateusbraga/vim-spell-pt-br")
-  use({
-    "editorconfig/editorconfig-vim",
-    config = getSetup("EditorConfig.vim"),
-  })
   use("matze/vim-move")
   use {
     "stevearc/oil.nvim",
