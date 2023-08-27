@@ -63,6 +63,7 @@ end
 
 local imap = createMapper("i")
 local nmap = createMapper("n")
+local vmap = createMapper("v")
 
 imap("<c-c>", "<esc>")
 
@@ -75,6 +76,9 @@ nmap("<leader>ev", ":sp $MYVIMRC | lcd %:h<CR>", { silent = true })
 nmap("<leader>h", ":nohls<CR>", { silent = true })
 nmap("<leader>pv", ":Oil<CR>", { silent = true })
 nmap("<leader>sv", ":luafile ~/.config/nvim/init.lua<cr>")
+
+vmap("<leader>do", ":diffget<CR>", { silent = true })
+vmap("<leader>dp", ":diffput<CR>", { silent = true })
 
 -- }}}
 
