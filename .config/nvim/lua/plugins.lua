@@ -74,11 +74,14 @@ packer.startup(function(use)
   -- Themes and alike
   use({
     "sainnhe/everforest",
-    config = "vim.cmd[[colorscheme everforest]]",
   })
   use({
     "Mofiqul/dracula.nvim",
     setup = getSetup("dracula.lua"),
+  })
+  use({
+    "folke/tokyonight.nvim",
+    config = "vim.cmd[[colorscheme tokyonight-moon]]",
   })
   use({
     "nvim-lualine/lualine.nvim",
