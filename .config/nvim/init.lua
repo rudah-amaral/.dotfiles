@@ -1,12 +1,3 @@
-local vimFolder
-if vim.fn.has("nvim") == 1 then
-  vimFolder = vim.fn.stdpath("config")
-elseif vim.fn.has("unix") == 1 then
-  vimFolder = vim.fn.expand("~/.vim")
-else
-  vimFolder = vim.fn.expand("~/vimfiles")
-end
-
 vim.g.mapleader = " "
 
 require("plugins")
@@ -39,37 +30,7 @@ vim.opt.scrolloff      = 8
 vim.opt.modeline       = true
 vim.opt.clipboard:append("unnamedplus")
 vim.opt.path:append("**")
-
-if vim.fn.has("vms") == 1 then
-  vim.opt.backup = false -- VMs have their own backup settings.
-else
-  if vim.fn.isdirectory(vimFolder .. "/backupdir") == 0 then
-    vim.fn["mkdir"](vimFolder .. "/backupdir")
-  end
-
-  if vim.fn.isdirectory(vimFolder .. "/swpdir") == 0 then
-    vim.fn["mkdir"](vimFolder .. "/swpdir")
-  end
-
-  vim.opt.backup = true
-  vim.opt.backupdir = vimFolder .. "/backupdir"
-  vim.opt.directory = vimFolder .. "/swpdir"
-
-  if vim.fn.has("persistent_undo") == 1 then
-    if vim.fn.isdirectory(vimFolder .. "/undodir") == 0 then
-      vim.fn.mkdir(vimFolder .. "/undodir")
-    end
-
-    vim.opt.undofile = true
-    vim.opt.undodir = vimFolder .. "/undodir"
-  end
-end
-
--- You can't highlight something with only two terminal colors.
-local terminalColor = tonumber(vim.api.nvim_get_option("t_Co"))
-if terminalColor > 2 or vim.fn.has("gui_running") then
-  vim.opt.hlsearch = true
-end
+vim.opt.undofile = true
 
 if vim.fn.has("folding") == 1 then
   vim.opt.foldenable     = true
