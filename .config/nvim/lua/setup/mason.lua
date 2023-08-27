@@ -79,6 +79,8 @@ end
 -- be passed to the `settings` field of the server config and serve as the
 -- default settings. Configure per project using their respective settings file.
 local servers = {
+  cssls = {},
+  jsonls = {},
   lua_ls = {
     -- Configuration file: .luarc.json
     Lua = {
@@ -89,10 +91,11 @@ local servers = {
       },
     },
   },
+  texlab = {},
+  tsserver = {},
   vimls = {
     -- Barely customizable, no config file
   },
-  tsserver = {}
 }
 
 require("neodev").setup()
