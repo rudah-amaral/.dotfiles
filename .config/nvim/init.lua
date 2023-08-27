@@ -40,21 +40,41 @@ end
 
 -- MAPPINGS {{{
 
-vim.api.nvim_set_keymap("i", "<c-c>", "<esc>", { noremap = true })
+local map = function(mode, lhs, rhs, options)
+  local defaultOptions = { noremap = true, silent = false }
+  if options then
+    for key, value in pairs(options) do
+      if defaultOptions[key] ~= nil then
+        defaultOptions[key] = value
+      else
+        print("vim.api.nvim_set_keymap doesn't accept option " .. key)
+      end
+    end
+  end
 
-vim.api.nvim_set_keymap("n", "<up>", "<nop>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<down>", "<nop>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<left>", "<nop>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<right>", "<nop>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader><space>", "za", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>ev", ":sp $MYVIMRC | lcd %:h<CR>",
-  { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>h", ":nohls<CR>",
-  { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>pv", ":Oil<CR>",
-  { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>sv", ":luafile ~/.config/nvim/init.lua<cr>",
-  { noremap = true })
+  vim.api.nvim_set_keymap(mode, lhs, rhs, defaultOptions)
+end
+
+local createMapper = function(mode)
+  return function(lhs, rhs, options)
+    map(mode, lhs, rhs, options)
+  end
+end
+
+local imap = createMapper("i")
+local nmap = createMapper("n")
+
+imap("<c-c>", "<esc>")
+
+nmap("<up>", "<nop>")
+nmap("<down>", "<nop>")
+nmap("<left>", "<nop>")
+nmap("<right>", "<nop>")
+nmap("<leader><space>", "za")
+nmap("<leader>ev", ":sp $MYVIMRC | lcd %:h<CR>", { silent = true })
+nmap("<leader>h", ":nohls<CR>", { silent = true })
+nmap("<leader>pv", ":Oil<CR>", { silent = true })
+nmap("<leader>sv", ":luafile ~/.config/nvim/init.lua<cr>")
 
 -- }}}
 
