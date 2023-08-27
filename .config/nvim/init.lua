@@ -7,7 +7,6 @@ require("plugins")
 -- " When in doubt call :help.
 -- " Vim doesn't like keyboard layouts other than US-International, e.g. jumping
 -- " through help tags is mapped with [c-ç] on a ABNT layout.
-vim.cmd("filetype plugin indent on")
 vim.opt.expandtab      = true -- Tabs are spaces
 vim.opt.tabstop        = 2    -- 2 spaces
 vim.opt.softtabstop    = 2    -- A <BS> is 2 spaces
@@ -17,13 +16,10 @@ vim.opt.termguicolors  = true
 vim.opt.colorcolumn    = "81"
 vim.opt.textwidth      = 80
 vim.opt.showcmd        = true
-vim.opt.ruler          = true
 vim.opt.number         = true
 vim.opt.relativenumber = true
 vim.opt.cursorline     = true
-vim.opt.incsearch      = true
 vim.opt.showmatch      = true
-vim.opt.backspace      = { "indent", "eol", "start" }
 vim.opt.wildmenu       = true
 vim.opt.smartindent    = true
 vim.opt.scrolloff      = 8
