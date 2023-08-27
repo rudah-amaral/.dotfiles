@@ -31,6 +31,7 @@ vim.opt.modeline       = true
 vim.opt.clipboard:append("unnamedplus")
 vim.opt.path:append("**")
 vim.opt.undofile = true
+vim.opt.diffopt:append("linematch:60")
 
 if vim.fn.has("folding") == 1 then
   vim.opt.foldenable     = true
