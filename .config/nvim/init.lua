@@ -40,30 +40,9 @@ end
 
 -- MAPPINGS {{{
 
-local map = function(mode, lhs, rhs, options)
-  local defaultOptions = { noremap = true, silent = false }
-  if options then
-    for key, value in pairs(options) do
-      if defaultOptions[key] ~= nil then
-        defaultOptions[key] = value
-      else
-        print("vim.api.nvim_set_keymap doesn't accept option " .. key)
-      end
-    end
-  end
-
-  vim.api.nvim_set_keymap(mode, lhs, rhs, defaultOptions)
-end
-
-local createMapper = function(mode)
-  return function(lhs, rhs, options)
-    map(mode, lhs, rhs, options)
-  end
-end
-
-local imap = createMapper("i")
-local nmap = createMapper("n")
-local vmap = createMapper("v")
+local imap = require("mapper").imap
+local nmap = require("mapper").nmap
+local vmap = require("mapper").vmap
 
 imap("<c-c>", "<esc>")
 
@@ -91,4 +70,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   group = highlight_group,
   pattern = "*",
 })
+
 -- vim: foldmethod=marker: foldlevel=0
