@@ -55,6 +55,8 @@ nmap("<leader>ev", ":sp $MYVIMRC | lcd %:h<CR>", { silent = true })
 nmap("<leader>h", ":nohls<CR>", { silent = true })
 nmap("<leader>pv", ":Oil<CR>", { silent = true })
 nmap("<leader>sv", ":luafile ~/.config/nvim/init.lua<cr>")
+nmap("[d", ": lua vim.diagnostic.goto_prev()<cr>", { silent = true })
+nmap("]d", ": lua vim.diagnostic.goto_next()<cr>", { silent = true })
 
 vmap("<leader>do", ":diffget<CR>", { silent = true })
 vmap("<leader>dp", ":diffput<CR>", { silent = true })
