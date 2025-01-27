@@ -52,6 +52,12 @@ return {
     vim.api.nvim_set_keymap("n", "<leader>tb",
     "<cmd>lua require('telescope.builtin').buffers()<cr>", { noremap = true })
 
+    vim.keymap.set("n", "<leader>ev", function()
+      vim.cmd("new")
+      vim.cmd("lcd " .. vim.fn.stdpath("config"))
+      require("telescope.builtin").find_files()
+    end)
+
     require("telescope").load_extension("fzf")
   end,
 }
