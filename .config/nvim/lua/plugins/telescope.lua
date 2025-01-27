@@ -60,6 +60,10 @@ return {
       require("telescope.builtin").find_files()
     end)
 
+    vim.keymap.set("n", "<leader>th", function()
+      require("telescope.builtin").help_tags()
+    end, { noremap = true })
+
     require("telescope").load_extension("fzf")
   end,
 }
