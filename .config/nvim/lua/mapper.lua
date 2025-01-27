@@ -7,12 +7,12 @@ local map = function(mode, lhs, rhs, options)
       if defaultOptions[key] ~= nil then
         defaultOptions[key] = value
       else
-        print("vim.api.nvim_set_keymap doesn't accept option " .. key)
+        print("vim.keymap.set doesn't accept option " .. key)
       end
     end
   end
 
-  vim.api.nvim_set_keymap(mode, lhs, rhs, defaultOptions)
+  vim.keymap.set(mode, lhs, rhs, defaultOptions)
 end
 
 local createMapper = function(mode)
