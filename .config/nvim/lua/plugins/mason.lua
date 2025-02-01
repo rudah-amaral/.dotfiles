@@ -2,8 +2,6 @@ return {
   -- Manages LSPs, DAPs and formatters
   "williamboman/mason.nvim",
   dependencies = {
-    -- Automatically sets up lua-language-server and +
-    "folke/neodev.nvim",
     -- LSPs
     "neovim/nvim-lspconfig",
     "williamboman/mason-lspconfig.nvim",
@@ -98,16 +96,6 @@ return {
     local servers = {
       cssls = {},
       jsonls = {},
-      lua_ls = {
-        -- Configuration file: .luarc.json
-        Lua = {
-          telemetry = { enable = false },
-          workspace = { checkThirdParty = false },
-          completion = {
-            callSnippet = "Replace",
-          },
-        },
-      },
       texlab = {},
       tsserver = {},
       vimls = {
@@ -115,7 +103,6 @@ return {
       },
     }
 
-    require("neodev").setup()
     require("mason").setup()
 
     local mason_lspconfig = require("mason-lspconfig")
