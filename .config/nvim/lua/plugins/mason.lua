@@ -67,7 +67,7 @@ return {
       cssls = {},
       jsonls = {},
       texlab = {},
-      tsserver = {},
+      ts_ls = {},
       vimls = {},
     }
 
