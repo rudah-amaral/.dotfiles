@@ -2,46 +2,19 @@ return {
   -- Manages LSPs, DAPs and formatters
   "williamboman/mason.nvim",
   dependencies = {
-    -- LSPs
+    -- Provides basic Nvim LSP client configurations for LSP servers.
     "neovim/nvim-lspconfig",
+    -- Auto-installs and sets handlers for LSPs
     "williamboman/mason-lspconfig.nvim",
-    -- Formatters and linters
-    "jose-elias-alvarez/null-ls.nvim",
-    "jay-babu/mason-null-ls.nvim",
+    -- Ensures formatters and linters are installed
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
     -- Completion capabilities
     "hrsh7th/cmp-nvim-lsp",
   },
   config = function()
-    local has_null_ls_formatter = function(file_type)
-      local sources = require("null-ls.sources")
-      return #sources.get_available(file_type, "NULL_LS_FORMATTING") > 0
-    end
-
-    local format = function(bufnr)
-      local buffer_filetype = vim.bo[bufnr].filetype
-
-      vim.lsp.buf.format({
-        bufnr = bufnr,
-        filter = function(client)
-          if has_null_ls_formatter(buffer_filetype) then
-            return client.name == "null-ls"
-          end
-          return true
-        end,
-      })
-    end
-
-    local formatting_group = vim.api.nvim_create_augroup("Formatting Group", {})
-    local format_on_write = function(bufnr)
-      vim.api.nvim_clear_autocmds({ group = formatting_group, buffer = bufnr })
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        group = formatting_group,
-        buffer = bufnr,
-        callback = function()
-          format(bufnr)
-        end
-      })
-    end
+    require("mason").setup()
+    local mason_lspconfig = require("mason-lspconfig")
+    local mason_tool_installer = require("mason-tool-installer")
 
     -- nvim-cmp supports additional completion capabilities, so broadcast that to
     -- servers
@@ -81,10 +54,6 @@ return {
       -- nmap("<leader>wl", function()
       --   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
       -- end, "[W]orkspace [L]ist Folders")
-
-      if client.supports_method("textDocument/formatting") then
-        format_on_write(bufnr)
-      end
     end
 
     -- The following language servers will automatically be installed. Use their
@@ -103,9 +72,6 @@ return {
       },
     }
 
-    require("mason").setup()
-
-    local mason_lspconfig = require("mason-lspconfig")
     mason_lspconfig.setup({
       ensure_installed = vim.tbl_keys(servers),
     })
@@ -124,18 +90,11 @@ return {
       end,
     })
 
-    require("mason-null-ls").setup({
+    mason_tool_installer.setup({
       ensure_installed = {
         "prettierd",
-        "eslint_d",
-      },
-      automatic_installation = false,
-      handlers = {},
-    })
-
-    local null_ls = require("null-ls")
-    null_ls.setup({
-      on_attach = on_attach
+        "eslint_d"
+      }
     })
   end
 }
