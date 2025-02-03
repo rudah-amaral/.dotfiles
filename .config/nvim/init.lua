@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
-require("plugins")
+require("config.lazy")
 
 -- {{{ VIM OPTIONS
 

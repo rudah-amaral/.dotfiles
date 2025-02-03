@@ -1,3 +1,4 @@
+vim.cmd [[
 " Press \r to start rotating lines and <C-c> (Control+c) to stop.
 
 function! s:RotateString(string)
@@ -48,3 +49,4 @@ endfunction
 nnoremap <silent> <Plug>(RotateLines) :<C-u>call <SID>RotateLines()<CR>
 
 nmap \r <Plug>(RotateLines)
+]]
