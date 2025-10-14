@@ -28,9 +28,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
     pkgs.arduino-ide
     pkgs.bitwarden-desktop
     pkgs.bottles
@@ -42,6 +39,7 @@
     pkgs.kdePackages.okular
     pkgs.lua-language-server
     pkgs.nerd-fonts.meslo-lg
+    pkgs.nixd
     pkgs.ripgrep
     pkgs.starship
     pkgs.stow
