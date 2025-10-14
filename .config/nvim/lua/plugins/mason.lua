@@ -1,6 +1,7 @@
 return {
   -- Manages LSPs, DAPs and formatters
   "williamboman/mason.nvim",
+  enabled = false,
   dependencies = {
     -- Provides basic Nvim LSP client configurations for LSP servers.
     "neovim/nvim-lspconfig",
