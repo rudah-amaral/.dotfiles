@@ -15,6 +15,12 @@
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
+  # Unfree software whitelist by pname
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "discord"
+    "wpsoffice"
+  ];
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
@@ -24,6 +30,7 @@
     pkgs.arduino-ide
     pkgs.bitwarden-desktop
     pkgs.bottles
+    pkgs.discord
     pkgs.eza
     pkgs.fd
     pkgs.fzf
@@ -36,6 +43,7 @@
     pkgs.tombi
     pkgs.typescript-language-server
     pkgs.vscode-langservers-extracted
+    pkgs.wpsoffice
     pkgs.xclip
     pkgs.zathura
     pkgs.zsh
