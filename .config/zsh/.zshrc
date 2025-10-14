@@ -1,3 +1,9 @@
+# source antidote
+source "$ZDOTDIR/antidote/antidote.zsh"
+
+# initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
+antidote load
+
 # Load completions from nix packaged programs
 fpath=(~/.nix-profile/share/zsh/site-functions $fpath)
 
