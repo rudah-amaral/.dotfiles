@@ -6,12 +6,9 @@
 	name = Rudah Amaral
 	email = 19709437+rudah-amaral@users.noreply.github.com
 	signingkey = 19709437+rudah-amaral@users.noreply.github.com
-[credential]
-  ; Assuming I'm on WSL
-	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
 [commit]
-	gpgsign = true
-  template = /home/rud___boy/.gitmessage
-; ; In case of needing additional configurations depending on environment
+  template = /home/rud___boy/.config/git/gitmessage
+  ; gpgsign = true
+; In case of needing additional configurations depending on environment
 ; [includeIf "gitdir:~/dev/"]
 ;   path = ~/dev/.gitconfig
