@@ -28,9 +28,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
     pkgs.arduino-ide
     pkgs.bitwarden-desktop
     pkgs.bottles
@@ -52,6 +49,7 @@
     pkgs.xclip
     pkgs.zathura
     pkgs.zsh
+    pkgs.nixd
     # Home-manager doesn't have access to the system, therefore it's necessary
     # to set zsh as default login shell:
     # echo ~/.nix-profile/bin/zsh | sudo tee -a /etc/shells

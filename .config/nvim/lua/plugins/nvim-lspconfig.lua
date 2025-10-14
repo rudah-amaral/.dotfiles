@@ -8,6 +8,7 @@ return {
     vim.lsp.enable("javascript")
     vim.lsp.enable("jsonls")
     vim.lsp.enable("lua_ls")
+    vim.lsp.enable("nixd")
     vim.lsp.enable("tombi")
     vim.lsp.enable("ts_ls")
   end
