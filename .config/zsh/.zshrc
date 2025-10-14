@@ -36,3 +36,6 @@ setopt hist_find_no_dups
 # Keybindings
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+
+eval "$(starship init zsh)"
+eval "$(fzf --zsh)"
