@@ -1,6 +1,10 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, nixgl, ... }:
 
 {
+  nixGL.packages = import nixgl { inherit pkgs; };
+  nixGL.defaultWrapper = "mesa"; # or the driver you need
+  nixGL.installScripts = [ "mesa" ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "rud___boy";
@@ -52,6 +56,12 @@
     # to set zsh as default login shell:
     # echo ~/.nix-profile/bin/zsh | sudo tee -a /etc/shells
     # usermod -s ~/.nix-profile/bin/zsh $USER
+    
+    (config.lib.nixGL.wrap pkgs.alacritty)
+    (config.lib.nixGL.wrap pkgs.calibre)
+    (config.lib.nixGL.wrap pkgs.firefox)
+    (config.lib.nixGL.wrap pkgs.kitty)
+    (config.lib.nixGL.wrap pkgs.neovide)
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
