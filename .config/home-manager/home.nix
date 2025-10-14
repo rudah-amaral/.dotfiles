@@ -37,6 +37,7 @@
     pkgs.git
     pkgs.kdePackages.okular
     pkgs.lua-language-server
+    pkgs.nerd-fonts.meslo-lg
     pkgs.ripgrep
     pkgs.starship
     pkgs.stow
@@ -56,6 +57,7 @@
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
+    # OBS: Esse pacote não funciona mais assim. vvvvvvvvvvvvvvvv
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
     # # You can also create simple shell scripts directly inside your
@@ -65,6 +67,13 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+
+  # Whether to enable fontconfig configuration. This will, for example, allow
+  # fontconfig to discover fonts and configurations installed through
+  # home.packages and nix-env.
+  fonts.fontconfig = {
+    enable = true;
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
