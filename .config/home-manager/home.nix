@@ -104,6 +104,10 @@
     source = "${pkgs.antidote}/share/antidote";
   };
 
+  home.file.".config/alacritty/themes" = {
+    source = "${pkgs.alacritty-theme}/share/alacritty-theme/";
+  };
+
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
   # shell provided by Home Manager. If you don't want to manage your shell
