@@ -21,6 +21,28 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
+    pkgs.arduino-ide
+    pkgs.bitwarden-desktop
+    pkgs.bottles
+    pkgs.eza
+    pkgs.fd
+    pkgs.fzf
+    pkgs.git
+    pkgs.kdePackages.okular
+    pkgs.lua-language-server
+    pkgs.ripgrep
+    pkgs.starship
+    pkgs.stow
+    pkgs.tombi
+    pkgs.typescript-language-server
+    pkgs.vscode-langservers-extracted
+    pkgs.xclip
+    pkgs.zathura
+    pkgs.zsh
+    # Home-manager doesn't have access to the system, therefore it's necessary
+    # to set zsh as default login shell:
+    # echo ~/.nix-profile/bin/zsh | sudo tee -a /etc/shells
+    # usermod -s ~/.nix-profile/bin/zsh $USER
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -73,4 +95,10 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs = {
+    neovim = {
+      enable = true;
+    };
+  };
 }
