@@ -3,6 +3,7 @@ return {
   config = function()
     -- vim.lsp.enable("markdown")
     vim.lsp.enable("cssls")
+    vim.lsp.enable("arduino_language_server")
     vim.lsp.enable("eslint")
     vim.lsp.enable("html")
     vim.lsp.enable("javascript")
