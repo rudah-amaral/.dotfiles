@@ -38,6 +38,7 @@
     pkgs.discord
     pkgs.eza
     pkgs.fd
+    pkgs.fluent-reader
     pkgs.fzf
     pkgs.git
     pkgs.kdePackages.okular
