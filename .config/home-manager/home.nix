@@ -39,6 +39,7 @@
     pkgs.git
     pkgs.kdePackages.okular
     pkgs.lua-language-server
+    pkgs.mpv
     pkgs.nerd-fonts.meslo-lg
     pkgs.nixd
     pkgs.ripgrep
