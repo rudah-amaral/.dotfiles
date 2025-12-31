@@ -32,6 +32,7 @@
     pkgs.discord
     pkgs.eza
     pkgs.fd
+    pkgs.ffmpeg-full
     pkgs.fluent-reader
     pkgs.fzf
     pkgs.git
