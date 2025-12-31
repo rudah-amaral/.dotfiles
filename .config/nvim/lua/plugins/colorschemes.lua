@@ -1,6 +1,7 @@
 return {
   {
     "Mofiqul/dracula.nvim",
+    lazy = true,
     init = function()
       -- show the '~' characters after the end of buffers
       vim.g.dracula_show_end_of_buffer = true
@@ -14,15 +15,24 @@ return {
   },
   {
     "sainnhe/everforest",
+    lazy = true,
     init = function()
       vim.g.everforest_enable_italic = true
+      vim.cmd.colorscheme("everforest")
     end
   },
   {
     "folke/tokyonight.nvim",
-    lazy = false,
-    init = function()
-      vim.cmd.colorscheme("tokyonight")
-    end
+    lazy = true,
+    -- init = function()
+    -- vim.cmd.colorscheme("tokyonight")
+    -- end
+  },
+  {
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    -- init = function()
+    --   vim.cmd.colorscheme("gruvbox")
+    -- end
   }
 }
