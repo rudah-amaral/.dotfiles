@@ -44,6 +44,7 @@
     pkgs.nixd
     pkgs.qbittorrent-enhanced
     pkgs.ripgrep
+    pkgs.scilab-bin
     pkgs.starship
     pkgs.stow
     pkgs.tombi
