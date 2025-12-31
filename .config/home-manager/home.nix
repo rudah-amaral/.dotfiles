@@ -42,6 +42,7 @@
     pkgs.mpv
     pkgs.nerd-fonts.meslo-lg
     pkgs.nixd
+    pkgs.qbittorrent-enhanced
     pkgs.ripgrep
     pkgs.starship
     pkgs.stow
