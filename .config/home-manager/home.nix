@@ -35,6 +35,7 @@
     pkgs.ffmpeg-full
     pkgs.fluent-reader
     pkgs.fzf
+    pkgs.gimp3-with-plugins
     pkgs.git
     pkgs.gnuplot
     pkgs.kdePackages.okular
