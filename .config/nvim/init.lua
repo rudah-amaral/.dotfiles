@@ -29,6 +29,7 @@ vim.opt.clipboard:append("unnamedplus")
 vim.opt.path:append("**")
 vim.opt.undofile = true
 vim.opt.diffopt:append("linematch:60")
+vim.opt.spelllang = "en_us,pt_br"
 
 if vim.fn.has("folding") == 1 then
   vim.opt.foldenable     = true
