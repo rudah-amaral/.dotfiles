@@ -48,6 +48,7 @@
     pkgs.starship
     pkgs.stow
     pkgs.tombi
+    pkgs.ty
     pkgs.typescript-language-server
     pkgs.vscode-langservers-extracted
     pkgs.wpsoffice
