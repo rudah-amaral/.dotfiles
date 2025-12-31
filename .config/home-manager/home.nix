@@ -27,8 +27,6 @@
     pkgs.arduino-ide
     pkgs.arduino-language-server
     pkgs.bitwarden-desktop
-    pkgs.bottles
-    pkgs.clang-tools
     pkgs.discord
     pkgs.eza
     pkgs.fd
