@@ -18,8 +18,6 @@
   # Unfree software whitelist by pname
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "discord"
-    "steam"
-    "steam-unwrapped"
     "wpsoffice"
   ];
 
@@ -44,7 +42,6 @@
     pkgs.nixd
     pkgs.ripgrep
     pkgs.starship
-    pkgs.steam
     pkgs.stow
     pkgs.tombi
     pkgs.typescript-language-server
