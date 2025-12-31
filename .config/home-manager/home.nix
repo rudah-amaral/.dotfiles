@@ -57,6 +57,11 @@
     # to set zsh as default login shell:
     # echo ~/.nix-profile/bin/zsh | sudo tee -a /etc/shells
     # usermod -s ~/.nix-profile/bin/zsh $USER
+
+    # System Utilitaries
+    pkgs.ddccontrol
+    pkgs.ddcutil
+    pkgs.vulkan-tools
     
     # GUI apps
     pkgs.alacritty
