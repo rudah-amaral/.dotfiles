@@ -5,6 +5,7 @@ return {
     -- A list of parser names, or "all"
     ensure_installed = "all",
 
+    ignore_install = { "latex" },
     highlight = {
       enable = true,
       additional_vim_regex_highlighting = false,
