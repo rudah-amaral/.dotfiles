@@ -2,16 +2,22 @@ return {
   "hrsh7th/nvim-cmp",
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
+    "saadparwaiz1/cmp_luasnip",
+    "iurimateus/luasnip-latex-snippets.nvim",
+    "micangl/cmp-vimtex",
     {
       "L3MON4D3/LuaSnip",
       -- follow latest release.
-      version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+      -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+      version = "v2.*",
       -- install jsregexp (optional!).
-      build = "make install_jsregexp"
-    },
-    "saadparwaiz1/cmp_luasnip",
+      build = "make install_jsregexp",
+    }
   },
   config = function()
+    require "luasnip-latex-snippets".setup()
+    require("luasnip").config.setup { enable_autosnippets = true }
+
     local cmp = require("cmp")
     local luasnip = require("luasnip")
 
@@ -55,6 +61,14 @@ return {
         { name = "nvim_lsp" },
         { name = "luasnip" },
       }
+    })
+    cmp.setup.filetype("tex", {
+      sources = {
+        { name = "vimtex" },
+        { name = "buffer" },
+        { name = "luasnip" },
+        -- other sources
+      },
     })
   end
 }
