@@ -37,7 +37,6 @@
     pkgs.fzf
     pkgs.gimp3-with-plugins
     pkgs.git
-    pkgs.gnuplot
     pkgs.kdePackages.okular
     pkgs.lua-language-server
     pkgs.nerd-fonts.meslo-lg
